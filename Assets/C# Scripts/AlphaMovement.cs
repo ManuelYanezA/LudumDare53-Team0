@@ -54,7 +54,7 @@ public class AlphaMovement : MonoBehaviour, IControllable
             }
             else if(direction < 0f)
             {
-                //Left movement
+                ////Left movement
                 rb.velocity = new Vector2(direction * speed, rb.velocity.y);
             } else 
             {
@@ -65,7 +65,10 @@ public class AlphaMovement : MonoBehaviour, IControllable
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             }
-
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 }

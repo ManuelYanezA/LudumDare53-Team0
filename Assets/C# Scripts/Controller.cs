@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    //Controller functions as a Controller Manager, it must be in a empty object so it manages multiple controllable objects
     // optionally take control of something right at the start
     [SerializeField] private GameObject _controlAtStart;
  

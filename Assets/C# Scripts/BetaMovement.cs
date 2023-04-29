@@ -6,7 +6,7 @@ public class BetaMovement : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
 
-    private bool _beingControlled = false;
+    private bool _beingControlled = true;
     private bool _turretMode = false;
 
     [SerializeField] private float speed = 2.5f;
@@ -52,6 +52,10 @@ public class BetaMovement : MonoBehaviour, IControllable
             {
                 rb.velocity = new Vector2(0f, rb.velocity.y);
             }
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 }
