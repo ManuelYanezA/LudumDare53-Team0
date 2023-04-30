@@ -11,6 +11,7 @@ TagManager:
   - Boundary1
   - Boundary2
   - Boundary3
+  - Battery
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Ground
   - Robot
   - Boundary
-  - 
+  - Alpha
   - 
   - 
   - 
