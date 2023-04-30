@@ -154,7 +154,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  robotLayer:
+    serializedVersion: 2
+    m_Bits: 128
   isTouchingGround: 0
+  isTouchingRobot: 0
   projectileSpeed: 5
   projectilePrefab: {fileID: 7752642112291126128, guid: 1e81a43011047254c88ba28b80540e9c, type: 3}
 --- !u!50 &4931246040009241796

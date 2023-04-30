@@ -17,7 +17,9 @@ public class AlphaMovement : MonoBehaviour, IControllable
     public Transform groundCheck;
     public float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask robotLayer;
     [SerializeField] private bool isTouchingGround;
+    [SerializeField] private bool isTouchingRobot;
 
     [SerializeField] private float projectileSpeed = 5f;
     public GameObject projectilePrefab;
@@ -56,9 +58,10 @@ public class AlphaMovement : MonoBehaviour, IControllable
 
             //Controls
             isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            isTouchingRobot = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, robotLayer);
             direction = Input.GetAxis("Horizontal");
 
-            if(isTouchingGround && Input.GetKey(KeyCode.V))
+            if((isTouchingGround || isTouchingRobot) && Input.GetKey(KeyCode.V))
             {
                 rb.velocity = new Vector2(0f, rb.velocity.y);
                 //If the V Key (Or other key defined up here) is being held, the player does not move
@@ -128,7 +131,7 @@ public class AlphaMovement : MonoBehaviour, IControllable
                     rb.velocity = new Vector2(0f, rb.velocity.y);
                 }
 
-                if(Input.GetButtonDown("Jump") && isTouchingGround)
+                if(Input.GetButtonDown("Jump") && (isTouchingGround || isTouchingRobot))
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
                 }
