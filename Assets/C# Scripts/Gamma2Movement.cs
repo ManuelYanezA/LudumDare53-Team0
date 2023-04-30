@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gamma2Movement : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
+    private IControllable _controllable;
 
     [SerializeField] private bool _beingControlled = false;
     //private bool _turretMode = false;
@@ -13,6 +14,9 @@ public class Gamma2Movement : MonoBehaviour, IControllable
     [SerializeField] private float direction = 0f;
 
     private Rigidbody2D rb;
+    private Vector3 batteryDirection;
+    [SerializeField] private float projectileSpeed = 5f;
+    public GameObject projectilePrefab;
 
     //From interface
     public void OnControlStart()
@@ -24,6 +28,11 @@ public class Gamma2Movement : MonoBehaviour, IControllable
     public void OnControlEnd()
     {
         _beingControlled = false;
+    }
+
+    void Awake()
+    {
+        _controllable = GetComponent<IControllable>();
     }
 
     void Start()
@@ -39,19 +48,85 @@ public class Gamma2Movement : MonoBehaviour, IControllable
             //Controls
             direction = Input.GetAxis("Vertical");
 
-            if(direction > 0f)
-            {
-                //Right movement
-                rb.velocity = new Vector2(rb.velocity.x, direction * speed);
-            }
-            else if(direction < 0f)
-            {
-                //Left movement
-                rb.velocity = new Vector2(rb.velocity.x, direction * speed);
-            } else 
+            if(Input.GetKey(KeyCode.V))
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
+                //If the V Key (Or other key defined up here) is being held, the player does not move
+                if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+                {
+                    //Player shoots a projectile in a selected direction
+                    batteryDirection = new Vector3(-1f,0f,0f);
+                    Vector3 spawnPosition = transform.position + new Vector3(-0.75f,0f,0f);
+                    GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
+                    batteryDirection = Vector3.zero;
+                    if(_controllable.Controller != null)
+                    {
+                        if(projectile.GetComponent<IControllable>() != null)
+                        {
+                            _controllable.Controller.TakeControl(projectile);
+                        }
+                    }
+                }
+                else if((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+                {
+                    //Player shoots a projectile in a selected direction
+                    batteryDirection = new Vector3(1f,0f,0f);
+                    Vector3 spawnPosition = transform.position + new Vector3(0.75f,0f,0f);
+                    GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
+                    batteryDirection = Vector3.zero;
+                    if(_controllable.Controller != null)
+                    {
+                        if(projectile.GetComponent<IControllable>() != null)
+                        {
+                            _controllable.Controller.TakeControl(projectile);
+                        }
+                    }
+                }
             }
+            else
+            {
+                if(direction > 0f)
+                {
+                    //Right movement
+                    rb.velocity = new Vector2(rb.velocity.x, direction * speed);
+                }
+                else if(direction < 0f)
+                {
+                    //Left movement
+                    rb.velocity = new Vector2(rb.velocity.x, direction * speed);
+                } else 
+                {
+                    //Idle
+                    rb.velocity = new Vector2(rb.velocity.x, 0f);
+                }
+            }
+
+
+
+
+
+
+
+
+
+            ////Controls
+            //direction = Input.GetAxis("Vertical");
+//
+            //if(direction > 0f)
+            //{
+            //    //Right movement
+            //    rb.velocity = new Vector2(rb.velocity.x, direction * speed);
+            //}
+            //else if(direction < 0f)
+            //{
+            //    //Left movement
+            //    rb.velocity = new Vector2(rb.velocity.x, direction * speed);
+            //} else 
+            //{
+            //    rb.velocity = new Vector2(rb.velocity.x, 0f);
+            //}
         }
     }
 }

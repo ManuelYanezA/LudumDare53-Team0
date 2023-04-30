@@ -174,3 +174,5 @@ MonoBehaviour:
   _beingControlled: 0
   speed: 7
   direction: 0
+  projectileSpeed: 5
+  projectilePrefab: {fileID: 7752642112291126128, guid: 1e81a43011047254c88ba28b80540e9c, type: 3}
