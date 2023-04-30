@@ -6,7 +6,7 @@ public class BetaMovement : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
 
-    private bool _beingControlled = true;
+    [SerializeField] private bool _beingControlled = false;
     private bool _turretMode = false;
 
     [SerializeField] private float speed = 2.5f;

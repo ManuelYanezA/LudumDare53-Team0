@@ -6,7 +6,7 @@ public class Gamma2Movement : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
 
-    private bool _beingControlled = false;
+    [SerializeField] private bool _beingControlled = false;
     private bool _turretMode = false;
 
     [SerializeField] private float speed = 7f;

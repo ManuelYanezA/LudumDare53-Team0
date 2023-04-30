@@ -6,7 +6,7 @@ public class BatteryController : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
 
-    private bool _beingControlled = false;
+    [SerializeField] private bool _beingControlled = false;
 
     //From interface
     public void OnControlStart()
