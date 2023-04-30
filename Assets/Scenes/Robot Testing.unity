@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254853227}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GrabDetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,6 +825,10 @@ PrefabInstance:
       value: Gamma I
       objectReference: {fileID: 0}
     - target: {fileID: 2677516096539677058, guid: a805307f64966424097114a7be832d03, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677516096539677058, guid: a805307f64966424097114a7be832d03, type: 3}
       propertyPath: m_TagString
       value: Robot
       objectReference: {fileID: 0}
@@ -943,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260586399223740295, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4260586399223740295, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
       propertyPath: m_TagString
@@ -955,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412045365357799768, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8444268850806565573, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
       propertyPath: m_Material
@@ -1031,6 +1035,10 @@ PrefabInstance:
       value: Beta
       objectReference: {fileID: 0}
     - target: {fileID: 6522020932773488200, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522020932773488200, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
       propertyPath: m_TagString
       value: Robot
       objectReference: {fileID: 0}
@@ -1094,6 +1102,10 @@ PrefabInstance:
     - target: {fileID: 5427584126090573354, guid: 936ef7f2aaf55654380e09038d1486e7, type: 3}
       propertyPath: m_Name
       value: Gamma II
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427584126090573354, guid: 936ef7f2aaf55654380e09038d1486e7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5427584126090573354, guid: 936ef7f2aaf55654380e09038d1486e7, type: 3}
       propertyPath: m_TagString
