@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoundaryManager : MonoBehaviour
 {
     private BoxCollider2D managerBox;
     private Transform player;
-    public GameObject boundary;
+    public GameObject[] boundaries;
+    private GameObject currentBoundary;
 
     // Start is called before the first frame update
     void Start()
     {
         managerBox = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Robot").GetComponent<Transform>();
+
+        // Buscamos el boundary activo al inicio
+        foreach (GameObject boundary in boundaries)
+        {
+            if (managerBox.bounds.Contains(boundary.transform.position))
+            {
+                currentBoundary = boundary;
+                currentBoundary.SetActive(true);
+            }
+            else
+            {
+                boundary.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -23,15 +36,27 @@ public class BoundaryManager : MonoBehaviour
 
     void ManageBoundary()
     {
-        if (managerBox.bounds.min.x < player.position.x && player.position.x < managerBox.bounds.max.x &&
-            managerBox.bounds.min.y < player.position.y && player.position.y < managerBox.bounds.max.y)
+        // Buscamos el boundary correspondiente al límite actual
+        foreach (GameObject boundary in boundaries)
         {
-            boundary.SetActive(true);
+            if (managerBox.bounds.Contains(boundary.transform.position))
+            {
+                if (boundary != currentBoundary)
+                {
+                    // Desactivamos el boundary actual y activamos el nuevo
+                    currentBoundary.SetActive(false);
+                    currentBoundary = boundary;
+                    currentBoundary.SetActive(true);
+                }
+                return;
+            }
         }
-        else
+
+        // Si el jugador está fuera de todos los límites, desactivamos el boundary actual
+        if (currentBoundary != null)
         {
-            boundary.SetActive(false);
+            currentBoundary.SetActive(false);
+            currentBoundary = null;
         }
     }
-
 }
