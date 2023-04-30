@@ -46,8 +46,6 @@ public class Controller : MonoBehaviour
             CurrentTarget.OnControlEnd();
             CurrentTarget.Controller = null;
             CurrentTarget = null;
- 
-            Debug.LogFormat("Released control of {0}", CurrentTarget.gameObject.name);
         }
     }
 }

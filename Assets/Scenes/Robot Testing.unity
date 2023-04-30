@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gamma I
       objectReference: {fileID: 0}
+    - target: {fileID: 2677516096539677058, guid: a805307f64966424097114a7be832d03, type: 3}
+      propertyPath: m_TagString
+      value: Robot
+      objectReference: {fileID: 0}
     - target: {fileID: 8573902219863213368, guid: a805307f64966424097114a7be832d03, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -941,6 +945,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4260586399223740295, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
+      propertyPath: m_TagString
+      value: Robot
+      objectReference: {fileID: 0}
     - target: {fileID: 4931246040009241796, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
       propertyPath: m_BodyType
       value: 0
@@ -1022,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beta
       objectReference: {fileID: 0}
+    - target: {fileID: 6522020932773488200, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
+      propertyPath: m_TagString
+      value: Robot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1082,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 5427584126090573354, guid: 936ef7f2aaf55654380e09038d1486e7, type: 3}
       propertyPath: m_Name
       value: Gamma II
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427584126090573354, guid: 936ef7f2aaf55654380e09038d1486e7, type: 3}
+      propertyPath: m_TagString
+      value: Robot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

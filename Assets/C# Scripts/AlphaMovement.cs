@@ -5,9 +5,9 @@ using UnityEngine;
 public class AlphaMovement : MonoBehaviour, IControllable
 {
     public Controller Controller { get; set; }
+    private IControllable _controllable;
 
     [SerializeField] private bool _beingControlled = false;
-    //private bool _turretMode = false;
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float direction = 0f;
@@ -37,6 +37,11 @@ public class AlphaMovement : MonoBehaviour, IControllable
         _beingControlled = false;
     }
 
+    void Awake()
+    {
+        _controllable = GetComponent<IControllable>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,25 +66,49 @@ public class AlphaMovement : MonoBehaviour, IControllable
                 {
                     //Player shoots a projectile in a selected direction
                     batteryDirection = new Vector3(-1f,0f,0f);
-                    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    Vector3 spawnPosition = transform.position + new Vector3(-0.75f,0f,0f);
+                    GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
                     projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
                     batteryDirection = Vector3.zero;
+                    if(_controllable.Controller != null)
+                    {
+                        if(projectile.GetComponent<IControllable>() != null)
+                        {
+                            _controllable.Controller.TakeControl(projectile);
+                        }
+                    }
                 }
                 else if((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
                 {
                     //Player shoots a projectile in a selected direction
                     batteryDirection = new Vector3(1f,0f,0f);
-                    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    Vector3 spawnPosition = transform.position + new Vector3(0.75f,0f,0f);
+                    GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
                     projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
                     batteryDirection = Vector3.zero;
+                    if(_controllable.Controller != null)
+                    {
+                        if(projectile.GetComponent<IControllable>() != null)
+                        {
+                            _controllable.Controller.TakeControl(projectile);
+                        }
+                    }
                 }
                 else if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
                 {
                     //Player shoots a projectile in a selected direction
                     batteryDirection = new Vector3(0f,1f,0f);
-                    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    Vector3 spawnPosition = transform.position + new Vector3(0f,0.75f,0f);
+                    GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
                     projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
                     batteryDirection = Vector3.zero;
+                    if(_controllable.Controller != null)
+                    {
+                        if(projectile.GetComponent<IControllable>() != null)
+                        {
+                            _controllable.Controller.TakeControl(projectile);
+                        }
+                    }
                 }
             }
             else
