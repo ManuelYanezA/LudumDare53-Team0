@@ -11,7 +11,7 @@ public class BatteryController : MonoBehaviour, IControllable
     //From interface
     public void OnControlStart()
     {
-        _beingControlled = true;
+        _beingControlled = false;
     }
 
     //From interface

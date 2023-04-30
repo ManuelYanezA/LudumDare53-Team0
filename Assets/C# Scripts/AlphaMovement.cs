@@ -41,8 +41,10 @@ public class AlphaMovement : MonoBehaviour, IControllable
     // Update is called once per frame
     void Update()
     {
-        if(_beingControlled)
+
+        if (_beingControlled)
         {
+
             //Controls
             isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             direction = Input.GetAxis("Horizontal");
