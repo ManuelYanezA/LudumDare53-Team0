@@ -10,6 +10,7 @@ TagManager:
   - Boundary
   - Battery
   - BoundaryManager
+  - MainMenu
   layers:
   - Default
   - TransparentFX
