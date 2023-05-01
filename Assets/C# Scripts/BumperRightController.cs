@@ -24,7 +24,7 @@ public class BumperRightController : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Battery"))
+        if(/*other.gameObject.CompareTag("Battery")*/other.gameObject.layer == 11)
         {
             other.transform.position = teleportPosition;
             other.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;

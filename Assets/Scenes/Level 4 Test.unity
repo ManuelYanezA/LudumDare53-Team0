@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 1479019028}
   laserPosition: {fileID: 1479019027}
+  damage: 10
 --- !u!212 &62188963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,7 +298,7 @@ GameObject:
   - component: {fileID: 252552959}
   - component: {fileID: 252552961}
   - component: {fileID: 252552962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,9 +812,9 @@ GameObject:
   m_Component:
   - component: {fileID: 726192648}
   - component: {fileID: 726192647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
