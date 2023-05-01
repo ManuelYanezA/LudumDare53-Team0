@@ -11,12 +11,12 @@ public class MenuInicial : MonoBehaviour
 
     public void Instructions()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Instructions");
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene("Credits");
     }
 
     public void Exit() 
