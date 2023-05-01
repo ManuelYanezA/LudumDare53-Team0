@@ -167,6 +167,7 @@ public class AlphaMovement : MonoBehaviour, IControllable
     void Die()
     {
         gameObject.SetActive(false);
+        Application.LoadLevel(Application.loadedLevel);
     }
 
 }
