@@ -14,6 +14,7 @@ public class BatteryController : MonoBehaviour, IControllable
     public void OnControlStart()
     {
         _beingControlled = true;
+        gameObject.tag = "Player";
     }
 
     void Awake()
@@ -26,6 +27,7 @@ public class BatteryController : MonoBehaviour, IControllable
     public void OnControlEnd()
     {
         _beingControlled = false;
+        gameObject.tag = "Battery";
     }
 
     // Update is called once per frame

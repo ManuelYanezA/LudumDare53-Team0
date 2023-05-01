@@ -22,12 +22,14 @@ public class BetaMovement : MonoBehaviour, IControllable
     public void OnControlStart()
     {
         _beingControlled = true;
+        gameObject.tag = "Player";
     }
 
     //From interface
     public void OnControlEnd()
     {
         _beingControlled = false;
+        gameObject.tag = "Robot";
     }
 
     void Awake()

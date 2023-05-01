@@ -8,10 +8,8 @@ TagManager:
   - Terrain
   - Robot
   - Boundary
-  - Boundary1
-  - Boundary2
-  - Boundary3
   - Battery
+  - BoundaryManager
   layers:
   - Default
   - TransparentFX
@@ -22,7 +20,7 @@ TagManager:
   - Ground
   - Robot
   - Boundary
-  - Alpha
+  - BoundaryManager
   - 
   - 
   - 

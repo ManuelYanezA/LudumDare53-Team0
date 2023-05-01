@@ -6,18 +6,19 @@ public class CameraFollow : MonoBehaviour
 {
     private BoxCollider2D cameraBox;
     private Transform player;
-    private float boundaryMargin = 1.5f;
+    //private float boundaryMargin = 1.5f;
 
     void Start()
     {
         cameraBox = GetComponent<BoxCollider2D>();
-        player = GameObject.FindGameObjectWithTag("Robot").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         AspectRatioBoxChange();
         FollowPlayer();
 
@@ -56,25 +57,32 @@ public class CameraFollow : MonoBehaviour
     void FollowPlayer()
     {
 
-        if (GameObject.Find("Boundary"))
+        if(GameObject.Find("Boundary"))
         {
-
-            Bounds boundaryBounds = GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds;
-            float cameraHeight = cameraBox.size.y;
-            float cameraWidth = cameraBox.size.x;
-
-            float minX = boundaryBounds.min.x + cameraWidth / 2 + boundaryMargin;
-            float maxX = boundaryBounds.max.x - cameraWidth / 2 - boundaryMargin;
-            float minY = boundaryBounds.min.y + cameraHeight / 2 + boundaryMargin;
-            float maxY = boundaryBounds.max.y - cameraHeight / 2 - boundaryMargin;
-
-            Debug.Log("minX: " + minX + " maxX: " + maxX + " minY: " + minY + " maxY: " + maxY);
-
-            float clampedX = Mathf.Clamp(player.position.x, minX, maxX);
-            float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
-
-            transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(player.position.x, GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds.min.x + cameraBox.size.x / 2, GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds.max.x - cameraBox.size.x / 2),
+                                            Mathf.Clamp(player.position.y, GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds.min.y + cameraBox.size.y / 2, GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds.max.y - cameraBox.size.y / 2),
+                                            transform.position.z);
         }
+
+        //if (GameObject.Find("Boundary"))
+        //{
+        //
+        //    Bounds boundaryBounds = GameObject.Find("Boundary").GetComponent<BoxCollider2D>().bounds;
+        //    float cameraHeight = cameraBox.size.y;
+        //    float cameraWidth = cameraBox.size.x;
+        //
+        //    float minX = boundaryBounds.min.x + cameraWidth / 2 + boundaryMargin;
+        //    float maxX = boundaryBounds.max.x - cameraWidth / 2 - boundaryMargin;
+        //    float minY = boundaryBounds.min.y + cameraHeight / 2 + boundaryMargin;
+        //    float maxY = boundaryBounds.max.y - cameraHeight / 2 - boundaryMargin;
+        //
+        //    Debug.Log("minX: " + minX + " maxX: " + maxX + " minY: " + minY + " maxY: " + maxY);
+        //
+        //    float clampedX = Mathf.Clamp(player.position.x, minX, maxX);
+        //    float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
+        //
+        //    transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        //}
     }
 
 
