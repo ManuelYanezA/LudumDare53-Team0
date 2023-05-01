@@ -7,6 +7,9 @@ public class AlphaMovement : MonoBehaviour, IControllable
     public Controller Controller { get; set; }
     private IControllable _controllable;
 
+    public float maxHealth = 10f;
+    private float currentHealth;
+
     [SerializeField] private bool _beingControlled = false;
 
     [SerializeField] private float speed = 5f;
@@ -54,6 +57,7 @@ public class AlphaMovement : MonoBehaviour, IControllable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -149,4 +153,20 @@ public class AlphaMovement : MonoBehaviour, IControllable
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
 }
