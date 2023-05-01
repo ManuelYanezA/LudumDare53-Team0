@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8444268850806565573}
   - component: {fileID: 1937563321631383446}
   - component: {fileID: 4931246040009241796}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Alpha
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   direction: 0
   jumpSpeed: 8
   groundCheck: {fileID: 8774829192342658034}
-  groundCheckRadius: 0.4
+  groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8774829192342658034}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

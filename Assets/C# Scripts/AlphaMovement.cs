@@ -26,12 +26,15 @@ public class AlphaMovement : MonoBehaviour, IControllable
     private Vector3 batteryDirection;
 
     private Rigidbody2D rb;
+    int alphaLayer;
 
     //From interface
     public void OnControlStart()
     {
         _beingControlled = true;
         gameObject.tag = "Player";
+        alphaLayer = LayerMask.NameToLayer("Player");
+        gameObject.layer = alphaLayer;
     }
 
     //From interface
@@ -39,6 +42,8 @@ public class AlphaMovement : MonoBehaviour, IControllable
     {
         _beingControlled = false;
         gameObject.tag = "Robot";
+        alphaLayer = LayerMask.NameToLayer("Robot");
+        gameObject.layer = alphaLayer;
     }
 
     void Awake()
