@@ -14,7 +14,7 @@ public class DestructableTiles : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Robot"))
+        if (other.gameObject.CompareTag("Player") && other.gameObject.name == "Beta")
         {
             Vector3 hitPosition = Vector3.zero;
             foreach (ContactPoint2D hit in other.contacts)
@@ -36,6 +36,7 @@ public class DestructableTiles : MonoBehaviour
             {
                 Vector3 robotPosition = robot.transform.position;
                 Vector3Int cellPosition = destructableTilemap.WorldToCell(robotPosition);
+                Debug.Log("Tilemap encontrado: " + destructableTilemap.name); // Agregar esta línea
                 destructableTilemap.SetTile(cellPosition, null);
             }
         }
