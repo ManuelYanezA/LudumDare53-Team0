@@ -33,7 +33,7 @@ public class Controller : MonoBehaviour
             CurrentTarget.Controller = this;
             CurrentTarget.OnControlStart();
  
-            Debug.LogFormat("Now controlling {0}", controllable.gameObject.name);
+            //Debug.LogFormat("Now controlling {0}", controllable.gameObject.name);
         }
     }
  

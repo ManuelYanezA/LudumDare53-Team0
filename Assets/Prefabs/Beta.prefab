@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4290616620826330131}
   - component: {fileID: 3305509575469224143}
   - component: {fileID: 9137346794890662630}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Beta
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

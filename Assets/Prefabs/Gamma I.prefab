@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5410266248305727992}
   - component: {fileID: 5918209041798007157}
   - component: {fileID: 922269840685754728}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Gamma I
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
