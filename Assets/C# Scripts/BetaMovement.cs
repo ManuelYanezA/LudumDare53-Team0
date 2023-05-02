@@ -63,7 +63,7 @@ public class BetaMovement : MonoBehaviour, IControllable
                     //Player shoots a projectile in a selected direction
                     ani.SetBool("IsShooting", true);
                     batteryDirection = new Vector3(-1f,0f,0f);
-                    Vector3 spawnPosition = transform.position + new Vector3(-1.5f,0f,0f);
+                    Vector3 spawnPosition = transform.position + new Vector3(-1.5f,-0.8f,0f);
                     GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
                     projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
                     batteryDirection = Vector3.zero;
@@ -80,7 +80,7 @@ public class BetaMovement : MonoBehaviour, IControllable
                     ani.SetBool("IsShooting", true);
                     //Player shoots a projectile in a selected direction
                     batteryDirection = new Vector3(1f,0f,0f);
-                    Vector3 spawnPosition = transform.position + new Vector3(1.5f, 0f,0f);
+                    Vector3 spawnPosition = transform.position + new Vector3(1.5f, -0.8f,0f);
                     GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
                     projectile.GetComponent<Rigidbody2D>().velocity = batteryDirection * projectileSpeed;
                     batteryDirection = Vector3.zero;

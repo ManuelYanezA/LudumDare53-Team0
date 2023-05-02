@@ -1354,34 +1354,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4290616620826330131, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4902699
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290616620826330131, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.24513528
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290616620826330131, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.6425807
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290616620826330131, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823827630326596836, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823827630326596836, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823827630326596836, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6522020932773488200, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
       propertyPath: m_Name
       value: Beta
