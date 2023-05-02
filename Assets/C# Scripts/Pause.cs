@@ -53,6 +53,7 @@ public class Pause : MonoBehaviour
 
     public void BackToMenu()
     {
+        BackgroundMusic.instance.GetComponent<AudioSource>().Stop();
         SceneManager.LoadScene("MainMenu");
     }
 }
