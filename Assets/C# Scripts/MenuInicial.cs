@@ -8,12 +8,12 @@ public class MenuInicial : MonoBehaviour
 
     public void Start()
     {
-        audioSource = GameObject.FindWithTag("Music").GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
     public void Play()
     {
         audioSource.Stop();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level 1");
     }
 
     public void Instructions()
