@@ -1253,12 +1253,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4794730798811455882, guid: 6ab5fba2fd5627240b744faeded48de1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794730798811455882, guid: 6ab5fba2fd5627240b744faeded48de1, type: 3}
       propertyPath: _controlAtStart
       value: 
       objectReference: {fileID: 7231270}
     - target: {fileID: 8710897743149571006, guid: 6ab5fba2fd5627240b744faeded48de1, type: 3}
       propertyPath: m_Name
       value: ControllerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710897743149571006, guid: 6ab5fba2fd5627240b744faeded48de1, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710897743149571006, guid: 6ab5fba2fd5627240b744faeded48de1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1388,6 +1400,10 @@ PrefabInstance:
     - target: {fileID: 6522020932773488200, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
       propertyPath: m_Name
       value: Beta
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137346794890662630, guid: 62c192952856ec345bb0de4402fb45f0, type: 3}
+      propertyPath: _beingControlled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
