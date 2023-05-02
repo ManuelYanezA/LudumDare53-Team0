@@ -14,7 +14,11 @@ public class MenuInicial : MonoBehaviour
     {
 
         SceneManager.LoadScene("Level 1");
-        BackgroundMusic.instance.GetComponent<AudioSource>().Stop();
+        if (BackgroundMusic.instance != null)
+        {
+            BackgroundMusic.instance.GetComponent<AudioSource>().Stop();
+            Destroy(BackgroundMusic.instance.gameObject);
+        }
     }
 
     public void Instructions()
