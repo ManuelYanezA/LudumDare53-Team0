@@ -15,7 +15,13 @@ public class EndLevelScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.name == "Alpha")
         {
+
+            if (SceneManager.GetActiveScene().name == "Credits")
+            {
+                Destroy(BackgroundMusic.instance.gameObject);
+            }
             SceneManager.LoadScene(scene);
+
         }
     }
 }
