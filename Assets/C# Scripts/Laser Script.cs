@@ -17,6 +17,7 @@ public class LaserScript : MonoBehaviour
         AlphaMovement player = hit.collider.GetComponent<AlphaMovement>();
         if(player != null)
         {
+            Debug.Log("Player");
             player.TakeDamage(damage);
         }
     }
