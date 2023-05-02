@@ -292,9 +292,9 @@ GameObject:
   - component: {fileID: 568937882}
   - component: {fileID: 568937881}
   - component: {fileID: 568937880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Destructible
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
