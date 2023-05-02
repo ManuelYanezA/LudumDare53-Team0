@@ -198,7 +198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4483065915147346931, guid: a8996f94c760e4243abf30252c9c0d37, type: 3}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4483065915147346931, guid: a8996f94c760e4243abf30252c9c0d37, type: 3}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Reset
         m_Mode: 1
@@ -921,7 +921,7 @@ RectTransform:
   - {fileID: 5698563082116840154}
   - {fileID: 2570810451620656306}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4483065915147346931, guid: a8996f94c760e4243abf30252c9c0d37, type: 3}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
