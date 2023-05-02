@@ -463,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alpha
       objectReference: {fileID: 0}
+    - target: {fileID: 5139616101290652187, guid: b614c6c6f90096f45a373d436df631b7, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
