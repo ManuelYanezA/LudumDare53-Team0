@@ -17,4 +17,5 @@ Use your energy to control Alpha and other robots in it's journey to deliver ene
 
   ### Gamma I & Gamma II
   
-    Both robots function the same way, they move horizontally or vertically, and can shoot the battery perpendicular to their movement.
+    Both robots function the same way, they move horizontally or vertically, and can shoot the 
+    battery perpendicular to their movement.
